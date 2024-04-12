@@ -69,7 +69,7 @@ func (db *DbRentalsInstance) DeleteRentalById(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusNotFound).JSON(ErrRentalNotFound)
 	}
 
-	if rental.RentDate == "" {
+	if rental.ReturnDate == "" {
 		return c.Status(fiber.StatusConflict).JSON(ErrRentalNotFinalized)
 	}
 
