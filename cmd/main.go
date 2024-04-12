@@ -8,7 +8,7 @@ import (
 	"os"
 	"time"
 
-	//"github.com/joho/godotenv"
+	"github.com/joho/godotenv"
 )
 
 ////
@@ -16,11 +16,11 @@ import (
 
 func init() {
 	time.Local, _ = time.LoadLocation("America/Sao_Paulo")
-	//err := godotenv.Load(".env")
+	err := godotenv.Load(".env")
 
-	//if err != nil {
-	//	log.Fatalf("Error loading .env file: %v", err)
-	//}
+	if err != nil {
+		log.Fatalf("Error loading .env file: %v", err)
+	}
 
 }
 
